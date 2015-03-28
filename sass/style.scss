@@ -1,0 +1,177 @@
+// best practise
+// put variables here for use in the imported files.
+@import "reset";
+$background : #F5F5F5;
+$tab-background :#E7E7E7;
+$font-family-body : cursive, sans-serif;
+$font-family-header: "Liberation Mono", sans-serif;
+
+@mixin border($border-color:grey, $border-radius:2px, $width: thin, $type: solid){
+	border: $width $type $border-color;
+    border-radius: $border-radius;
+}
+
+%reset {
+	padding: 0;
+	margin:0;
+}
+
+%form {
+@extend %reset;
+padding: 15px;
+	width: 100%;
+	@extend .center;
+	
+}
+
+%label {
+	//@extebd .center;
+	display: inline-block;
+	text-align: right;
+	width:90px;
+}
+
+%submit {
+	//width:80%;
+	cursor: pointer;
+	
+	background-color:orange;
+	color: blue;
+	@include border(grey, 25px);
+}
+
+%input {
+	height: 40px;
+	width: 90%;
+	@extend .center;
+	padding: 2px 2px 2px 5px;
+	
+}
+
+%flex-box {
+	justify-content: space-between;
+    //align-items: center;
+    align-content: center;
+}
+
+.border {
+    border: thin solid grey;
+    border-radius: 2px;
+}
+
+.center {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.width-90 {
+   width:90%;
+}
+
+.width-75 {
+   width:75%;
+}
+
+.width-50 {
+   width:50%;
+}
+
+.left {
+   float: left;
+}
+
+.right {
+   float: right;
+}
+
+.break {
+   clear: both;
+   //@extend .padding-bottom-10
+}
+
+body {
+   background-color: $background;
+   //max-width: 1600px;
+}
+
+#tabs, footer {
+   font-family: $font-family-body;
+   
+}
+
+.bold {
+   font-weight: 700;
+}
+
+.s-bold {
+   font-weight: 600;
+}
+
+.padding-top-10 {
+   padding-top: 10px;
+}
+
+.padding-top-5 {
+   padding-top: 5px;
+}
+
+.padding-bottom-10 {
+   padding-bottom: 10px;
+}
+
+p + p {
+    padding-top: 10px;
+	//padding-bottom: 10px;
+}
+
+//p:first-child {
+//     padding-bottom: 10px;
+//}
+
+#tabs {
+        
+     padding-top: 10px;
+     padding-bottom: 20px;
+     width:100%;
+     
+}
+
+// having set up variables, mixins and classes, import the partial files
+@import "nav";
+@import "header";
+@import "tab-1";
+@import "footer";
+@import "tab-2";
+@import "tab-4";
+@import "tab-3";
+
+// main container
+.container {
+   max-width: 960px;
+   width:75%;
+     @media (max-width:600px){
+         width: 550px;
+          width:90%;
+     }
+     @media (max-width:400px){
+      width: 350px;
+          width:95%;
+     }
+     @media (max-width:350px){
+      width: 320px;
+          width:95%;
+     }
+     @media (max-width:320px){
+      width: 310px;
+          width:95%;
+     }
+     @media (max-width:310px){
+      width: 300px;
+          width:95%;
+     }
+     @media (max-width:300px) and (min-width:250px){
+      width: 250px;
+      width:95%;
+     }
+}
+

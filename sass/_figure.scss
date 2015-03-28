@@ -1,0 +1,59 @@
+#tabs-3 {
+    #gallery1 {
+        @extend %gallery;
+    }
+    
+    #gallery2 {
+        @extend %gallery;
+    }
+}
+
+%gallery {
+    ul {
+        width: 100%;
+        @extend .center;
+        li {
+            padding: 6px;
+            margin:6px;
+        width: 95%;
+        @extend .center;
+    }
+    figure {
+        
+        img {
+            
+            width:95%;
+            //height:250px;
+            @extend .center;
+        }
+        figcaption {
+		@include border(grey, 2px, thin, solid);
+		padding: 3px;
+		background-color: $tab-background;
+             text-align: center;
+                #title {
+                   font-size: 17px;
+                    font-weight:500;
+                }
+                #price {
+				 font-size: 12px;
+                    background-color: green;
+					@include border(green, 2px, thin, solid);
+					padding: 5px;
+					color: white;
+                }
+                #description {
+                    
+                }
+        }
+    }
+    }
+    
+}
+
+#tabs-3 {
+     @extend %background-color;
+	  #amount {
+			border:0; color:#f6931f; font-weight:bold;
+	}
+}

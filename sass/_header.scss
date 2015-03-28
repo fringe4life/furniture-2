@@ -1,0 +1,58 @@
+header {
+   width:100%;
+   h1 {
+      font-family: $font-family-header;
+      font-size: 27px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      @media (max-width: 850px){
+            text-align: center;
+          }
+      @media (max-width: 900px){
+            font-size: 26px;
+          }
+      @media (max-width: 415px){
+         #name {
+            display: none;
+            width: 90%;
+         }
+          font-size: 22px;
+      }
+      &:before {
+          @media (max-width:415px){
+            content: "C.W.";
+            font-size: 22px;
+          }
+      }
+      
+   }
+   
+     #header {
+        float: left;
+        @extend %removeFloat;
+        order:1;
+        flex-grow:2;
+        align-self: center;
+     }
+     
+   
+}
+
+
+
+
+%removeFloat {
+    @media (max-width:850px){
+        float: none;
+     }
+}
+
+ #flex {
+        height:100%;
+        display: flex;
+     @extend %flex-box;
+      @media (max-width:950px){
+        flex-direction: column;
+     flex-wrap: wrap;
+      }
+     }

@@ -1,0 +1,127 @@
+%startInvisible {
+	width:0;
+	height:0;
+}
+
+%Image {
+     display: block;
+     @extend .center;
+}
+
+%background-color {
+     background-color: $tab-background;
+     // should work
+}
+
+#text {
+     padding-right: 7px;
+     @media (max-width:550px){
+               clear: both;
+               width:100%;
+          }
+          #first {
+          
+          padding-left: 8px;
+           
+          }
+}
+
+
+
+#woodworking{
+     img {
+     @extend %Image;
+     @media (max-width: 550px){
+          width: 85%;
+     }
+     @media (max-width: 400px){
+          width: 82%;
+     }
+     @media (max-width: 300px){
+          width:80%;
+     }
+  }
+}
+
+#seriousFun {
+// hello
+     padding-left: 15px;
+     padding-top: 0px;
+}
+
+
+
+#tabs-1 {
+    
+     #quoteName {
+          margin-right:45px;
+     }
+     
+     
+     @extend %background-color;
+     #image {
+	 @extend .width-50;
+	 @extend .right;
+	 @extend .padding-top-10;
+          img {
+                 width: 95%;
+          }
+          @media (max-width:550px){
+              width:90%;
+          }
+     }
+     #comissionText {
+           font-weight: bold;
+     }
+     #hidden {
+          @extend %startInvisible;
+         
+          @media (max-width:1000px){
+               width: 95%;
+               height: 50%;
+          }
+     }
+      #hidden-1 {
+			@extend %startInvisible;
+			img { 
+			//border-color: $tab-background;
+			//	border-radius:0px;
+				}
+          @media (max-width:700px){
+               width: 95%;
+               height: 50%;
+          }
+          @media (max-width:550px){
+            display: none;
+          }
+     }
+        
+      padding: 10px;
+      #remainingText {
+          padding-left: 15px;
+          padding-right: 45px;
+		  @media (max-width:550px){
+			padding-right: 5px;
+			padding-left:9px;
+		  }
+      }
+     #welcome {
+          font-family: $font-family-header;
+          font-size: 22px;
+          text-decoration: underline;
+          
+     }
+     font-size: 15px;
+   margin-top: 7px;
+   padding-top: 10px;
+   div + p {
+     padding-top: 10px;
+     padding-bottom: 10px;
+   }
+   
+}
+
+
+
+
+

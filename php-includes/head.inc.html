@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Chris Wilson Furniture Design Custom Furniture on Commission Rimu Tawa Oak Native Timber wood chair table desk dining coffee table bookshelf wardrobe wine cabinet Wairoa Artist New Zealand">
+        <meta name="keywords" content="Chris Wilson Furniture Design Custom Furniture on Commission Rimu Tawa Oak Native Timber wood chair table desk dining coffee table bookshelf wardrobe wine cabinet New Zealand Artist Wairoa">
+        
+       
+        <link href="css/style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" href='images/chair.ico' type="image/x-icon">
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script src="scripts/html5shiv-printshiv.js"></script>
+        <![endif]-->
+        <script src = "//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src = "//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        
+        <script>
+             
+            
+            $(function() {
+               $( "#tabs" ).tabs({
+                 beforeLoad: function( event, ui ) {
+                   ui.jqXHR.fail(function() {
+                     ui.panel.html(
+                       "Couldn't load this tab. We'll try to fix this as soon as possible. " +
+                       "If this wouldn't be a demo." );
+                   });
+                 },
+                 load: function( event, ui ) {
+                   
+                 }
+               });
+               
+                $('#min').on('change', function(){
+                    $('#minLabel').text($(this).val());
+                    console.log($(this).val());
+                });
+                
+                $('#min').on('keyup', function(){
+                    $('#minLabel').text($(this).val());
+console.log($(this).val());
+                });
+                            
+                $('#max').on('change', function(){
+                    $('#maxLabel').text($(this).val());
+                });
+                
+                $('#max').on('keyup', function(){
+                    $('#maxLabel').text($(this).val());
+                });     
+             
+                             
+            });
+        </script>
+        <title>Furniter Designed and Built by Chris Wilson</title>        
+    </head>
+   
+     <!-- $( "#slider" ).slider({
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+                 <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+                    range: true,
+                    min: 0,
+                    max: 500,
+                    values: [ 75, 300 ],
+                    start: function(e,ui){
+                        $('#slider-bubble').fadeIn('fast');
+                    },
+                    stop: function(e,ui){
+                        $('#slider-bubble').fadeOut('fast');
+                    }
+                  });
+               $( ".selector" ).on( "slide", function( event, ui ) {
+                 $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+                } );
+               
+               
+                  $( "#amount" ).val( "$" + $( "#slider" ).slider( "values", 0 ) +
+                    " - $" + $( "#slider" ).slider( "values", 1 ) );-->

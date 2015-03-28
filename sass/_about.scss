@@ -1,0 +1,23 @@
+#aboutMe {
+    
+     h2 {
+         text-align: center;
+    }
+}
+
+#tabs-4 {
+      img {
+	  
+	  @extend %Image;
+          padding-top: 7px;
+        padding-bottom: 10px;
+        @media (max-width:300px){
+            width:90%;
+        }
+    }
+	@extend %background-color;
+    padding-bottom: 7px;
+    #headerAbout {
+        text-align: center;
+    }
+}
