@@ -82,6 +82,10 @@ function has_exclusion_from($value, $set=[]) {
   return !in_array($value, $set);
 }
 
+function isValidEmail($email){ 
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
 // * validate uniqueness
 // A common validation, but not an easy one to write generically.
 // Requires going to the database to check if value is already present.

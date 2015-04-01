@@ -60,8 +60,9 @@ class Furniture {
     }
     
     private function check_query_string($params){
-        if(has_presence($params["query"])){
-            if(has_length($params["query"], ['min' => 5, 'max' => 100])){
+        $is_present = (has_presence($params["query"])===true) ? true : false;
+        if($is_present){
+            if(has_length($params["query"], ['min' => 4, 'max' => 100])){
                 $query =& $params["query"];
                 $query = strip_tags($query);
                 $query = PDO::quote($query);
@@ -113,6 +114,7 @@ class Furniture {
     
     /**
         Tests for presence of errors and whether the query has returned false
+        uses the errorInfo isset method to test for errors instead of try {} catch(PDOException $e){die();}
     
     */
     private function checkQuerySuccess($stmt, $db){
@@ -164,8 +166,6 @@ class Furniture {
             $message = "";
             //ignore other paramters by getting the allowed ones
             $params = allowed_get_params(["x", "number", "min", "max", "query"]);
-            //$params["min"] = 500;
-            //$params["max"] = 1400;
             $isNumber = self::performChecks($params);
             
             //$message = $message . "\rgot here";

@@ -1,0 +1,96 @@
+
+
+%form {
+	@extend %reset;
+	padding: 15px;
+	width: 100%;
+	@extend .center;
+	input:first-child {
+		padding-top: 5px;
+	}
+	
+	input + label {
+		padding-top: 5px;
+	}
+	
+	
+}
+
+%label {
+	//@extebd .center;
+	//display: inline-block;
+	//text-align: right;
+	width:95%;
+	margin-bottom:5px;
+}
+
+%submit {
+	//width:80%;
+	cursor: pointer;
+	
+	background-color:orange;
+	color: blue;
+	@include border(grey, 25px);
+}
+
+%input {
+	height: 40px;
+	width: 90%;
+	@extend .center;
+	padding: 2px 2px 2px 5px;
+	
+}
+
+%formDiv {
+	@include border(orange);
+	
+	width:50%;
+	@media (max-width:800px){
+		width:90%;
+	}
+	@extend .center;
+}
+
+#itemSearch {
+	@extend %formDiv;
+	@extend %background-color;
+}
+
+
+ #contactForm {
+	@extend %formDiv;
+	background-color: $background;
+}
+
+
+
+
+form {
+	@extend %form;
+	@media (max-width:800px){
+		width:90%;
+	}
+}
+input {
+	border-radius: 4px;
+	@extend %input;
+	&[type=text]{
+		margin-bottom: 7px;
+	}
+	&[type=range]{
+		margin-bottom: 7px;
+	}
+	@media (max-width:800px){
+		width:90%;
+	}
+	@extend .center;
+}
+label {
+	@extend %label;
+}
+input[type=submit]{
+	@extend %submit;
+	//width: 90%;
+	@extend .center;
+	width: 80%;
+}

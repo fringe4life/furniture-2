@@ -16,41 +16,8 @@ $font-family-header: "Liberation Mono", sans-serif;
 	margin:0;
 }
 
-%form {
-@extend %reset;
-padding: 15px;
-	width: 100%;
-	@extend .center;
-	
-}
-
-%label {
-	//@extebd .center;
-	display: inline-block;
-	text-align: right;
-	width:90px;
-}
-
-%submit {
-	//width:80%;
-	cursor: pointer;
-	
-	background-color:orange;
-	color: blue;
-	@include border(grey, 25px);
-}
-
-%input {
-	height: 40px;
-	width: 90%;
-	@extend .center;
-	padding: 2px 2px 2px 5px;
-	
-}
-
 %flex-box {
 	justify-content: space-between;
-    //align-items: center;
     align-content: center;
 }
 
@@ -137,6 +104,7 @@ p + p {
 }
 
 // having set up variables, mixins and classes, import the partial files
+@import "forms";
 @import "nav";
 @import "header";
 @import "tab-1";

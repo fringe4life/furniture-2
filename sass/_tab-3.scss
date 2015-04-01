@@ -16,35 +16,7 @@
     }
 	
 	
-	form {
-		@extend %form;
-		@media (max-width:800px){
-			width:90%;
-		}
-	}
-	input {
-		border-radius: 4px;
-		@extend %input;
-		&[type=text]{
-			margin-bottom: 7px;
-		}
-		&[type=range]{
-			margin-bottom: 7px;
-		}
-		@media (max-width:800px){
-			width:90%;
-		}
-		@extend .center;
-	}
-	label {
-		@extend %label;
-	}
-	input[type=submit]{
-		@extend %submit;
-		//width: 90%;
-		@extend .center;
-		width: 80%;
-	}
+	
 }
 
 #workFlex {
@@ -57,15 +29,7 @@
 	
 }
 
-#itemSearch {
-@include border(orange);
-	@extend %background-color;
-	width:50%;
-	@media (max-width:800px){
-		width:90%;
-	}
-	@extend .center;
-}
+
 
 #slider {
 	//height:40px;
@@ -74,8 +38,8 @@
 }
 
 %gallery {
-display:inline-block;
-vertical-align:baseline;
+	display:inline-block;
+	vertical-align:baseline;
 	width:50%;
 	@media (max-width:800px){
 		width:95%;
