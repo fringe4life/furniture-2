@@ -11,7 +11,7 @@
             <label for="min" id="minLabel">$:  </label>
             <input type="range" min="500", max="1400", value="500", id="min" name="min"><br style="border:0;" />
             <label for="max" id="minLabel">- $:  </label><input type="range" min="500", max="1400", value="1400", id="max" name="max">
-            <input type="submit" value="search" class="center">
+            <input type="submit" value="search" class="center" value="Search">
         </form>
     </div>
     <div id="workFlex">

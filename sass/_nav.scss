@@ -1,23 +1,23 @@
 .nav {
-        float: right;
-        @extend %removeFloat;
-        order:2;
-         align-self: center;
-         ul {
-            
-        @extend %flex-box;
-		  flex-direction: column;
-		  flex-wrap: wrap;
-		  align-items: center;
-     @media (max-width:420px){
-        width:100%;
-        padding: 0;
-        
-     }
-         }
+	float: right;
+	@extend %removeFloat;
+	order:3;
+	align-self: center;
+	ul {
+		
+		@extend %flex-box;
+			flex-direction: column;
+			flex-wrap: wrap;
+			align-items: center;
+		@media (max-width:420px){
+			width:100%;
+			padding: 0;
+
+		}
+    }
 		 li {
     @media (max-width:420px) and  (min-width:200px){
-	width:100%;
+			width:100%;
             float:none;
            // padding-bottom: 0;
             
@@ -62,7 +62,8 @@
          }
      }
      a:hover, a:active {
-          color: red;
+          color: yellow;
+		  background-color: green;
      }
     
         

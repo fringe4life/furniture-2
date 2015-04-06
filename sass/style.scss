@@ -1,6 +1,7 @@
 // best practise
 // put variables here for use in the imported files.
 @import "reset";
+@import "normalize";
 $background : #F5F5F5;
 $tab-background :#E7E7E7;
 $font-family-body : cursive, sans-serif;
@@ -25,6 +26,34 @@ $font-family-header: "Liberation Mono", sans-serif;
     border: thin solid grey;
     border-radius: 2px;
 }
+
+.hide {
+	@media (max-width:420px){
+		display: none;
+	}
+}
+
+
+.emailSymbol {
+
+	@extend %reset;
+	@include border(grey, 2px, thin, solid);
+
+
+	padding: 2px;
+	@extend %span;
+}
+%span {
+      @extend %reset;
+      //margin-left: 7px !important;
+      background-color: grey;
+      color: white;
+      padding-bottom: 3px !important;
+      text-align: center;
+	 // margin: 3px;
+}
+
+
 
 .center {
    margin-left: auto;

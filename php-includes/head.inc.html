@@ -4,26 +4,24 @@
         <meta charset="UTF-8">
         <meta name="description" content="Chris Wilson Furniture Design Custom Furniture on Commission Rimu Tawa Oak Native Timber wood chair table desk dining coffee table bookshelf wardrobe wine cabinet Wairoa Artist New Zealand">
         <meta name="keywords" content="Chris Wilson Furniture Design Custom Furniture on Commission Rimu Tawa Oak Native Timber wood chair table desk dining coffee table bookshelf wardrobe wine cabinet New Zealand Artist Wairoa">
-        
-       
         <link href="css/style.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="shortcut icon" href='images/chair.ico' type="image/x-icon">
         <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
             <script src="scripts/html5shiv-printshiv.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <script src = "//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src = "js/jquery-1.11.1.js"></script>
+        <script src="js/ajax-email.js"></script>
         <script src = "//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-        
         <script>
             $(function() {
                $( "#tabs" ).tabs({
                  beforeLoad: function( event, ui ) {
                    ui.jqXHR.fail(function() {
                      ui.panel.html(
-                       "Couldn't load this tab. We'll try to fix this as soon as possible. " +
-                       "If this wouldn't be a demo." );
+                       "Couldn't load this tab. We'll try to fix this as soon as possible.");
                    });
                  },
                  load: function( event, ui ) {
@@ -32,6 +30,5 @@
                });
             });
         </script>
-        <script src="js/ajax-email.js"></script>
         <title>Furniter Designed and Built by Chris Wilson</title>        
     </head>

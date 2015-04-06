@@ -60,9 +60,9 @@ class Furniture {
     }
     
     private function check_query_string($params){
-        $is_present = (has_presence($params["query"])===true) ? true : false;
+        $is_present = (has_presence($params["query"])) ? true : false;
         if($is_present){
-            if(has_length($params["query"], ['min' => 4, 'max' => 100])){
+            if(has_length($params["query"], ['min' => 3, 'max' => 100])){
                 $query =& $params["query"];
                 $query = strip_tags($query);
                 $query = PDO::quote($query);

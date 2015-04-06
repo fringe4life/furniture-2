@@ -3,13 +3,20 @@
 %form {
 	@extend %reset;
 	padding: 15px;
-	width: 100%;
 	@extend .center;
+	width: 100%;
+	
 	input:first-child {
 		padding-top: 5px;
+		//margin-left: 0px;
 	}
 	
+	
+	
 	input + label {
+		padding-top: 5px;
+	}
+	input + input {
 		padding-top: 5px;
 	}
 	
@@ -21,7 +28,9 @@
 	//display: inline-block;
 	//text-align: right;
 	width:95%;
-	margin-bottom:5px;
+	padding-bottom:10px;
+	//margin-bottom: 5px;
+	
 }
 
 %submit {
@@ -35,20 +44,34 @@
 
 %input {
 	height: 40px;
-	width: 90%;
+	width: 80%;
+	
 	@extend .center;
-	padding: 2px 2px 2px 5px;
+	padding: 2px 5px 2px 5px;
+	margin-top: 4px;
 	
 }
 
+%textArea {
+	height: 175px;
+	//vertical-align: top;
+	text-align: top;
+}
+
+
+
 %formDiv {
 	@include border(orange);
-	
-	width:50%;
+	@extend .center;
+	width:85%;
 	@media (max-width:800px){
 		width:90%;
 	}
-	@extend .center;
+	@media (max-width:500px){
+		width:96%;
+	//	padding: 7px;
+	}
+	
 }
 
 #itemSearch {
@@ -56,41 +79,140 @@
 	@extend %background-color;
 }
 
+#emailAddressForm {
+//	@extend .hide;
+}
 
  #contactForm {
+	margin-top: 16px;
 	@extend %formDiv;
 	background-color: $background;
+	@media (max-width:500px){
+		width:98%;
+	}
 }
 
 
-
+.required {
+	vertical-align: top;
+	//color: grey;
+}
 
 form {
 	@extend %form;
 	@media (max-width:800px){
 		width:90%;
 	}
+	@media (max-width:500px){
+		width:98%;
+	}
+	
 }
 input {
 	border-radius: 4px;
 	@extend %input;
-	&[type=text]{
-		margin-bottom: 7px;
-	}
+	
+//	&[type=text]{
+//		margin-bottom: 7px;
+//	}
 	&[type=range]{
 		margin-bottom: 7px;
 	}
 	@media (max-width:800px){
-		width:90%;
+		width:75%;
 	}
+	@media (max-width:500px){
+		//width:96%;
+	}
+	&[type=textarea] {
+
+		@extend %textArea;
+	}
+	
 	@extend .center;
+	&:hover {
+		background-color: $background;
+	}
+	//&:select {
+	//	background-color: $background;
+	//}
+	
 }
 label {
 	@extend %label;
+	&[for=e] {
+		//display:block;
+	}
+	&[for=subject]{
+		margin-left: 9px;
+	}
+	&[for=e]{
+		margin-left:32px;
+	}
+	.emailSymbol {
+		margin-left:9px;
+		margin-right:0px !important;
+	}
 }
+
+
+#formEmailSymbol {
+	margin: 3px;
+	padding-bottom:1px !important;
+	
+	
+}
+
+#labelContact {
+@extend .center;
+&:after {
+			@media (max-width:420px){
+		content : "Chris";
+		
+	}
+		}
+		
+		
+		@media (max-width:670px){
+			
+		}
+	display: block;
+	width: 100%;
+}
+
+
+#emailSubmit {
+	@extend .center;
+	//width: 95%;
+	width:50%;
+}
+
+#emailAddressForm {
+	@extend .hide;
+}
+
+#contactFormInput {
+	
+	//label, input {
+	//	float: left;
+	//}
+	//display: block;
+	
+}
+
+
 input[type=submit]{
 	@extend %submit;
 	//width: 90%;
-	@extend .center;
+	
+	//@extend .center;
 	width: 80%;
+	padding-top: 5px;
+	margin-top: 5px;
+	&:hover {
+		background-color: green;
+		//color: blue;
+		color:yellow;
+		
+	}
 }

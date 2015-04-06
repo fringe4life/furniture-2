@@ -33,22 +33,10 @@ footer {
    //   padding-top: 7px;
    //}
    
-   span {
-      @extend %reset;
-      //margin-left: 7px !important;
-      background-color: grey;
-      color: white;
-      padding-bottom: 3px !important;
-      text-align: center;
-   }
    
-   #emailSymbol {
    
-       @extend %reset;
-	  @include border(grey, 2px, thin, solid);
-      padding: 2px;
-      
-   }
+
+   
    .nav {
 		ul {
             
