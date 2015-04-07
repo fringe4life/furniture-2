@@ -36,10 +36,11 @@
 %submit {
 	//width:80%;
 	cursor: pointer;
-	
-	background-color:orange;
-	color: blue;
-	@include border(grey, 25px);
+	padding: 3px;
+	outline: none;
+	//background-color:
+	color: lighten (red, 20%);
+	@include border(grey,3px);
 }
 
 %input {
@@ -136,7 +137,27 @@ input {
 	//&:select {
 	//	background-color: $background;
 	//}
-	
+	&[type=submit]{
+		@extend %submit;
+		//width: 90%;
+		
+		//@extend .center;
+		width: 80%;
+		padding-top: 5px;
+		margin-top: 5px;
+		&:hover {
+			border-bottom-width: 4px;
+			margin-top:2px;
+			color:white;
+			background-color: red;
+		}
+		&:active, &:focus {
+			border-bottom-width: 1px;
+			margin-top: 2px;
+			color:white;
+			background-color: red;
+		}
+	}
 }
 label {
 	@extend %label;
@@ -200,19 +221,3 @@ label {
 	
 }
 
-
-input[type=submit]{
-	@extend %submit;
-	//width: 90%;
-	
-	//@extend .center;
-	width: 80%;
-	padding-top: 5px;
-	margin-top: 5px;
-	&:hover {
-		background-color: green;
-		//color: blue;
-		color:yellow;
-		
-	}
-}
