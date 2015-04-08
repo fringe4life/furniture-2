@@ -465,39 +465,86 @@ table {
   border-spacing: 0;
 }
 
-/* line 15, ../sass/style.scss */
-.emailSymbol, form, footer, .contact-info p, .contact-info .header {
+/* line 1, ../sass/_imageRotater.scss */
+#imageGallery {
+  height: 550px;
+  width: 95%;
+}
+@media (max-width: 400px) {
+  /* line 1, ../sass/_imageRotater.scss */
+  #imageGallery {
+    height: 450px;
+  }
+}
+@media (max-width: 300px) {
+  /* line 1, ../sass/_imageRotater.scss */
+  #imageGallery {
+    height: 350px;
+  }
+}
+@media (max-width: 250px) {
+  /* line 1, ../sass/_imageRotater.scss */
+  #imageGallery {
+    height: 275px;
+  }
+}
+/* line 14, ../sass/_imageRotater.scss */
+#imageGallery div {
+  position: absolute;
+  z-index: -1;
+}
+/* line 18, ../sass/_imageRotater.scss */
+#imageGallery div.previous {
+  z-index: -1;
+}
+/* line 22, ../sass/_imageRotater.scss */
+#imageGallery div.current {
+  z-index: 1;
+}
+/* line 28, ../sass/_imageRotater.scss */
+#imageGallery div img {
+  width: 90%;
+}
+/* line 36, ../sass/_imageRotater.scss */
+#imageGallery div h1 {
+  color: #333333;
+  font-weight: 900;
+  z-index: 2;
+}
+
+/* line 16, ../sass/style.scss */
+#imageGallery div img, .emailSymbol, form, footer, .contact-info p, .contact-info .header {
   padding: 0;
   margin: 0;
 }
 
-/* line 20, ../sass/style.scss */
+/* line 21, ../sass/style.scss */
 .nav ul, #flex, footer .nav ul, #workFlex {
   justify-content: space-between;
   align-content: center;
 }
 
-/* line 25, ../sass/style.scss */
+/* line 26, ../sass/style.scss */
 .border {
   border: thin solid grey;
   border-radius: 2px;
 }
 
 @media (max-width: 420px) {
-  /* line 30, ../sass/style.scss */
+  /* line 31, ../sass/style.scss */
   .hide, #emailAddressForm {
     display: none;
   }
 }
 
-/* line 37, ../sass/style.scss */
+/* line 38, ../sass/style.scss */
 .emailSymbol {
   border: thin solid grey;
   border-radius: 2px;
   padding: 2px;
 }
 
-/* line 46, ../sass/style.scss */
+/* line 47, ../sass/style.scss */
 .emailSymbol {
   background-color: grey;
   color: white;
@@ -505,83 +552,83 @@ table {
   text-align: center;
 }
 
-/* line 58, ../sass/style.scss */
+/* line 59, ../sass/style.scss */
 .center, form, input, #itemSearch, #contactForm, #labelContact, #emailSubmit, #woodworking img, #tabs-4 img, .contact-info, #tabs-2 {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 63, ../sass/style.scss */
+/* line 64, ../sass/style.scss */
 .width-90 {
   width: 90%;
 }
 
-/* line 67, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 .width-75 {
   width: 75%;
 }
 
-/* line 71, ../sass/style.scss */
+/* line 72, ../sass/style.scss */
 .width-50, #tabs-1 #image {
   width: 50%;
 }
 
-/* line 75, ../sass/style.scss */
+/* line 76, ../sass/style.scss */
 .left, #tabs-3 #gallery1 {
   float: left;
 }
 
-/* line 79, ../sass/style.scss */
+/* line 80, ../sass/style.scss */
 .right, #tabs-1 #image, #tabs-3 #gallery2 {
   float: right;
 }
 
-/* line 83, ../sass/style.scss */
+/* line 84, ../sass/style.scss */
 .break {
   clear: both;
 }
 
-/* line 88, ../sass/style.scss */
+/* line 89, ../sass/style.scss */
 body {
   background-color: #F5F5F5;
 }
 
-/* line 93, ../sass/style.scss */
+/* line 94, ../sass/style.scss */
 #tabs, footer {
   font-family: cursive, sans-serif;
 }
 
-/* line 98, ../sass/style.scss */
+/* line 99, ../sass/style.scss */
 .bold {
   font-weight: 700;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 103, ../sass/style.scss */
 .s-bold {
   font-weight: 600;
 }
 
-/* line 106, ../sass/style.scss */
+/* line 107, ../sass/style.scss */
 .padding-top-10, #tabs-1 #image {
   padding-top: 10px;
 }
 
-/* line 110, ../sass/style.scss */
+/* line 111, ../sass/style.scss */
 .padding-top-5 {
   padding-top: 5px;
 }
 
-/* line 114, ../sass/style.scss */
+/* line 115, ../sass/style.scss */
 .padding-bottom-10, .nav li {
   padding-bottom: 10px;
 }
 
-/* line 118, ../sass/style.scss */
+/* line 119, ../sass/style.scss */
 p + p {
   padding-top: 10px;
 }
 
-/* line 127, ../sass/style.scss */
+/* line 128, ../sass/style.scss */
 #tabs {
   padding-top: 10px;
   padding-bottom: 20px;
@@ -615,13 +662,14 @@ label {
 /* line 36, ../sass/_forms.scss */
 input[type=submit] {
   cursor: pointer;
-  background-color: orange;
-  color: blue;
+  padding: 3px;
+  outline: none;
+  color: lighten red, 20%;
   border: thin solid grey;
-  border-radius: 25px;
+  border-radius: 3px;
 }
 
-/* line 45, ../sass/_forms.scss */
+/* line 46, ../sass/_forms.scss */
 input {
   height: 40px;
   width: 80%;
@@ -629,127 +677,135 @@ input {
   margin-top: 4px;
 }
 
-/* line 55, ../sass/_forms.scss */
+/* line 56, ../sass/_forms.scss */
 input[type=textarea] {
   height: 175px;
   text-align: top;
 }
 
-/* line 63, ../sass/_forms.scss */
+/* line 64, ../sass/_forms.scss */
 #itemSearch, #contactForm {
   border: thin solid orange;
   border-radius: 2px;
   width: 85%;
 }
 @media (max-width: 800px) {
-  /* line 63, ../sass/_forms.scss */
+  /* line 64, ../sass/_forms.scss */
   #itemSearch, #contactForm {
     width: 90%;
   }
 }
 @media (max-width: 500px) {
-  /* line 63, ../sass/_forms.scss */
+  /* line 64, ../sass/_forms.scss */
   #itemSearch, #contactForm {
     width: 96%;
   }
 }
 
-/* line 86, ../sass/_forms.scss */
+/* line 87, ../sass/_forms.scss */
 #contactForm {
   margin-top: 16px;
   background-color: #F5F5F5;
 }
 @media (max-width: 500px) {
-  /* line 86, ../sass/_forms.scss */
+  /* line 87, ../sass/_forms.scss */
   #contactForm {
     width: 98%;
   }
 }
 
-/* line 96, ../sass/_forms.scss */
+/* line 97, ../sass/_forms.scss */
 .required {
   vertical-align: top;
 }
 
 @media (max-width: 800px) {
-  /* line 101, ../sass/_forms.scss */
+  /* line 102, ../sass/_forms.scss */
   form {
     width: 90%;
   }
 }
 @media (max-width: 500px) {
-  /* line 101, ../sass/_forms.scss */
+  /* line 102, ../sass/_forms.scss */
   form {
     width: 98%;
   }
 }
 
-/* line 111, ../sass/_forms.scss */
+/* line 112, ../sass/_forms.scss */
 input {
   border-radius: 4px;
 }
-/* line 118, ../sass/_forms.scss */
+/* line 119, ../sass/_forms.scss */
 input[type=range] {
   margin-bottom: 7px;
 }
 @media (max-width: 800px) {
-  /* line 111, ../sass/_forms.scss */
+  /* line 112, ../sass/_forms.scss */
   input {
     width: 75%;
   }
 }
-/* line 133, ../sass/_forms.scss */
+/* line 134, ../sass/_forms.scss */
 input:hover {
   background-color: #F5F5F5;
 }
-
-/* line 146, ../sass/_forms.scss */
-label[for=subject] {
-  margin-left: 9px;
-}
-/* line 149, ../sass/_forms.scss */
-label[for=e] {
-  margin-left: 32px;
-}
-/* line 152, ../sass/_forms.scss */
-label .emailSymbol {
-  margin-left: 9px;
-  margin-right: 0px !important;
-}
-
-/* line 159, ../sass/_forms.scss */
-#formEmailSymbol {
-  margin: 3px;
-  padding-bottom: 1px !important;
-}
-
-/* line 166, ../sass/_forms.scss */
-#labelContact {
-  display: block;
-  width: 100%;
-}
-@media (max-width: 420px) {
-  /* line 168, ../sass/_forms.scss */
-  #labelContact:after {
-    content: "Chris";
-  }
-}
-
-/* line 184, ../sass/_forms.scss */
-#emailSubmit {
-  width: 50%;
-}
-
-/* line 204, ../sass/_forms.scss */
+/* line 140, ../sass/_forms.scss */
 input[type=submit] {
   width: 80%;
   padding-top: 5px;
   margin-top: 5px;
 }
-/* line 212, ../sass/_forms.scss */
+/* line 148, ../sass/_forms.scss */
 input[type=submit]:hover {
-  background-color: green;
-  color: yellow;
+  border-bottom-width: 4px;
+  margin-top: 2px;
+  color: white;
+  background-color: red;
+}
+/* line 154, ../sass/_forms.scss */
+input[type=submit]:active, input[type=submit]:focus {
+  border-bottom-width: 1px;
+  margin-top: 2px;
+  color: white;
+  background-color: red;
+}
+
+/* line 167, ../sass/_forms.scss */
+label[for=subject] {
+  margin-left: 9px;
+}
+/* line 170, ../sass/_forms.scss */
+label[for=e] {
+  margin-left: 32px;
+}
+/* line 173, ../sass/_forms.scss */
+label .emailSymbol {
+  margin-left: 9px;
+  margin-right: 0px !important;
+}
+
+/* line 180, ../sass/_forms.scss */
+#formEmailSymbol {
+  margin: 3px;
+  padding-bottom: 1px !important;
+}
+
+/* line 187, ../sass/_forms.scss */
+#labelContact {
+  display: block;
+  width: 100%;
+}
+@media (max-width: 420px) {
+  /* line 189, ../sass/_forms.scss */
+  #labelContact:after {
+    content: "Chris";
+  }
+}
+
+/* line 205, ../sass/_forms.scss */
+#emailSubmit {
+  width: 50%;
 }
 
 /* line 1, ../sass/_nav.scss */
@@ -837,10 +893,15 @@ header {
 }
 /* line 3, ../sass/_header.scss */
 header h1 {
+  transition: all 400ms ease;
   font-family: "Liberation Mono", sans-serif;
   font-size: 27px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+/* line 5, ../sass/_header.scss */
+header h1:hover {
+  color: #ff9999;
 }
 @media (max-width: 850px) {
   /* line 3, ../sass/_header.scss */
@@ -859,33 +920,33 @@ header h1 {
   header h1 {
     font-size: 22px;
   }
-  /* line 15, ../sass/_header.scss */
+  /* line 19, ../sass/_header.scss */
   header h1 #name {
     display: none;
     width: 90%;
   }
 }
 @media (max-width: 415px) {
-  /* line 21, ../sass/_header.scss */
+  /* line 25, ../sass/_header.scss */
   header h1:before {
     content: "C.W.";
     font-size: 22px;
   }
 }
-/* line 30, ../sass/_header.scss */
+/* line 34, ../sass/_header.scss */
 header #header {
   float: left;
   order: 1;
   flex-grow: 2;
   align-self: center;
 }
-/* line 38, ../sass/_header.scss */
+/* line 42, ../sass/_header.scss */
 header p {
   order: 2;
   align-self: center;
 }
 @media (max-width: 850px) {
-  /* line 38, ../sass/_header.scss */
+  /* line 42, ../sass/_header.scss */
   header p {
     text-align: center;
     padding-bottom: 10px;
@@ -893,19 +954,19 @@ header p {
 }
 
 @media (max-width: 850px) {
-  /* line 53, ../sass/_header.scss */
+  /* line 57, ../sass/_header.scss */
   .nav, header #header {
     float: none;
   }
 }
 
-/* line 59, ../sass/_header.scss */
+/* line 63, ../sass/_header.scss */
 #flex {
   height: 100%;
   display: flex;
 }
 @media (max-width: 950px) {
-  /* line 59, ../sass/_header.scss */
+  /* line 63, ../sass/_header.scss */
   #flex {
     flex-direction: column;
     flex-wrap: wrap;
@@ -1303,48 +1364,48 @@ footer a[href^="mailto"], #contactEmail #repEmail a[href^="mailto"] {
   color: white;
 }
 
-/* line 146, ../sass/style.scss */
+/* line 147, ../sass/style.scss */
 .container {
   max-width: 960px;
   width: 75%;
 }
 @media (max-width: 600px) {
-  /* line 146, ../sass/style.scss */
+  /* line 147, ../sass/style.scss */
   .container {
     width: 550px;
     width: 90%;
   }
 }
 @media (max-width: 400px) {
-  /* line 146, ../sass/style.scss */
+  /* line 147, ../sass/style.scss */
   .container {
     width: 350px;
     width: 95%;
   }
 }
 @media (max-width: 350px) {
-  /* line 146, ../sass/style.scss */
+  /* line 147, ../sass/style.scss */
   .container {
     width: 320px;
     width: 95%;
   }
 }
 @media (max-width: 320px) {
-  /* line 146, ../sass/style.scss */
+  /* line 147, ../sass/style.scss */
   .container {
     width: 310px;
     width: 95%;
   }
 }
 @media (max-width: 310px) {
-  /* line 146, ../sass/style.scss */
+  /* line 147, ../sass/style.scss */
   .container {
     width: 300px;
     width: 95%;
   }
 }
 @media (max-width: 300px) and (min-width: 250px) {
-  /* line 146, ../sass/style.scss */
+  /* line 147, ../sass/style.scss */
   .container {
     width: 250px;
     width: 95%;

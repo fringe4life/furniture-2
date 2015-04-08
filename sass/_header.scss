@@ -1,6 +1,11 @@
 header {
    width:100%;
+   transition: all 1ms hinge;
    h1 {
+   
+   &:hover {
+	color: lighten(red, 15%);
+   }
       font-family: $font-family-header;
       font-size: 27px;
       padding-top: 5px;

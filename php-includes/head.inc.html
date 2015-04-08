@@ -17,7 +17,7 @@
         <script src = "//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         <script>
             $(function() {
-                /*var gallery = $('#imageGallery');
+                var gallery = $('#imageGallery');
                 var currentPhoto = $('#imageGallery div.current');
                 var currentImage = $('#imageGallery div.current img');
                 
@@ -39,7 +39,7 @@
                 differenceWidth = differenceWidth / 2;
                // alert(differenceHeight + " " + differenceWidth);
                 currentPhoto.css({"margin-left": differenceWidth , "margin-top": differenceHeight });
-                */
+                
                setInterval("rotateImages", 3000);
                $( "#tabs" ).tabs({
                  beforeLoad: function( event, ui ) {
@@ -79,7 +79,7 @@
                 var nextWidth =  nextImage.width()*1.0;
                 var nextHeight =  nextImage.height()*1.0;
                 
-                differenceHeight = galleryHeight - nextHeight - h1Height;
+                differenceHeight = galleryHeight - nextHeight;
                 differenceWidth = galleryWidth - nextWidth;
                
                 differenceHeight = differenceHeight / 2;
@@ -103,5 +103,10 @@
                 });
             }
         </script>
-        <title>Items Designed and Built by Chris Wilson</title>        
+        <title>Items Designed and Built by Chris Wilson</title>
     </head>
+    
+    
+    
+    
+    
