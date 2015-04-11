@@ -1,112 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Chris Wilson Furniture Design Custom Furniture on Commission Rimu Tawa Oak Native Timber wood chair table desk dining coffee table bookshelf wardrobe wine cabinet Wairoa Artist New Zealand">
-        <meta name="keywords" content="Chris Wilson Furniture Design Custom Furniture on Commission Rimu Tawa Oak Native Timber wood chair table desk dining coffee table bookshelf wardrobe wine cabinet New Zealand Artist Wairoa">
-        <link href="css/style.css" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" href='images/chair.ico' type="image/x-icon">
-        <!--[if lt IE 9]>
+<meta charset=UTF-8>
+<meta name=description content="Chris Wilson Furniture Design Custom Furniture on Commission Rimu Tawa Oak Native Timber wood chair table desk dining coffee table bookshelf wardrobe wine cabinet Wairoa Artist New Zealand">
+<meta name=keywords content="Chris Wilson Furniture Design Custom Furniture on Commission Rimu Tawa Oak Native Timber wood chair table desk dining coffee table bookshelf wardrobe wine cabinet New Zealand Artist Wairoa">
+<link href="css/style.css" rel=stylesheet>
+<meta name=viewport content="width=device-width, initial-scale=1"/>
+<link rel="shortcut icon" href='images/chair.ico' type="image/x-icon">
+<!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
             <script src="scripts/html5shiv-printshiv.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <script src = "js/jquery-1.11.1.js"></script>
-        <script src="js/javascript.js"></script>
-        <script src = "//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-        <script>
-            $(function() {
-                var gallery = $('#imageGallery');
-                var currentPhoto = $('#imageGallery div.current');
-                var currentImage = $('#imageGallery div.current img');
-                
-                var currentWidth =  currentImage.width()*1.0;
-                var currentHeight =  currentImage.height()*1.0;
-                
-                
-               // alert(currentHeight + " " + currentWidth);
-                var galleryWidth = gallery.width()*1.0;
-                var galleryHeight = gallery.height()*1.0;
-                
-                //alert(galleryHeight + " " + galleryWidth);
-                
-                var differenceHeight = galleryHeight - currentHeight;
-                var differenceWidth = galleryWidth - currentWidth;
-                 //alert(differenceHeight + " 1st " + differenceWidth);
-                
-                differenceHeight = differenceHeight / 2;
-                differenceWidth = differenceWidth / 2;
-               // alert(differenceHeight + " " + differenceWidth);
-                currentPhoto.css({"margin-left": differenceWidth , "margin-top": differenceHeight });
-                
-               setInterval("rotateImages", 3000);
-               $( "#tabs" ).tabs({
-                 beforeLoad: function( event, ui ) {
-                   ui.jqXHR.fail(function() {
-                     ui.panel.html(
-                       "Couldn't load this tab. We'll try to fix this as soon as possible.");
-                   });
-                 },
-                 load: function( event, ui ) {
-                   
-                 }
-               });
-            });
-            function rotateImages() {
-                var width = $("#tabs").width()*1.0;
-                var height = $("#tabs").height()*1.0;
-                
-                var gallery = $('#imageGallery');
-                var currentPhoto = $('#imageGallery div.current');
-                
-                 var galleryWidth = gallery.width()*1.0;
-                var galleryHeight = gallery.height()*1.0;
-                
-                var nextPhoto = currentPhoto.next();                
-              var nextImage, nextDiv, h1Height;
-                if (nextPhoto.length === 0){
-                    nextPhoto = $('#imageGallery div:first');
-                    nextImage = $('#imageGallery div:first img');
-                    h1Height = $('#imageGallery div:first h1');
-                    nextDiv = nextPhoto;
-                } else {
-                    nextImage = $(".current ~ div:first img");
-                     nextDiv = $(".current ~ div:first");
-                     h1Height = $(".current ~ div:first h1").height();
-                }
-            
-                var nextWidth =  nextImage.width()*1.0;
-                var nextHeight =  nextImage.height()*1.0;
-                
-                differenceHeight = galleryHeight - nextHeight;
-                differenceWidth = galleryWidth - nextWidth;
-               
-                differenceHeight = differenceHeight / 2;
-                differenceWidth = differenceWidth / 2;
-              // console.log(differenceHeight + " " + differenceWidth + " differences");
-              
-               nextPhoto.css({"margin-left": differenceWidth , "margin-top": differenceHeight });
-            
-               if (width< 230) {
-                    var prevSrc = nextImage.attr("src");
-                    var array = prevSrc.split("/");
-                    var file = "img-small/" + array[1];
-                    nextImage.attr("src", file);
-                } 
-                
-                
-                currentPhoto.removeClass('current').addClass('previous');
-                
-                nextPhoto.css({ opacity: 0.0 }).addClass('current').animate({ opacity: 1.0 }, 1000, function() {
-                    currentPhoto.removeClass('previous');
-                });
-            }
-        </script>
-        <title>Items Designed and Built by Chris Wilson</title>
-    </head>
-    
-    
-    
+<title>Items Designed and Built by Chris Wilson</title>
+</head>
     
     

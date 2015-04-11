@@ -1,5 +1,5 @@
 (function() {
-  var enhance, getValues, processContactForm, processErrors, removeEnhance, removeErrorStyles, rotateImages, validCsrf, validEmail, validMsg, validSubject, validateInputs, validateInputsArray;
+  var enhance, getValues, processContactForm, processErrors, removeEnhance, removeErrorStyles, validCsrf, validEmail, validMsg, validSubject, validateInputs, validateInputsArray;
 
   validEmail = function(email) {
     var regex;
@@ -124,15 +124,16 @@
   };
 
   processContactForm = function(e, $formID, $errorColor) {
-    var $selectorCsrf, $selectorEmail, $selectorMsg, $selectorOutput, $selectorSub, individualValues, meetsFormConditions, selectorsErrors, selectorsInputs, values;
+    var $selectorCsrf, $selectorEmail, $selectorMsg, $selectorName, $selectorOutput, $selectorSub, individualValues, meetsFormConditions, selectorInputs, selectorsErrors, values;
     e.preventDefault();
     $selectorCsrf = $formID + " > input[name=csrf_token]";
     $selectorSub = $formID + " > #subjectError";
     $selectorEmail = $formID + " > #emailError";
     $selectorMsg = $formID + " > #textError";
     $selectorOutput = $formID + " > #outcomeEmailForm";
+    $selectorName = $formID + " > #nameError";
     selectorsErrors = [$selectorSub, $selectorEmail, $selectorMsg];
-    selectorsInputs = ["input#e", "input#subject", "input#msg"];
+    selectorInputs = ["input#name", "input#e", "input#subject", "textarea#msg"];
     values = getValues(selectorInputs, $selectorCsrf);
     console.log("" + values[0] + " " + values[1] + " " + values[2] + " " + values[3]);
     meetsFormConditions = validateInputs(values);
@@ -145,18 +146,19 @@
         url: 'ajax/email.php',
         type: 'POST',
         data: {
-          'e': values[0],
-          'subject': values[1],
-          'message': values[2],
-          'csrf_token': values[3]
+          'name': values[0],
+          'e': values[1],
+          'subject': values[2],
+          'message': values[3],
+          'csrf_token': values[4]
         },
         'beforeSend': function() {
           return $($selectorOutput).text("Sending...");
         },
-        'success': function() {
+        'success': function(data) {
           var $output;
           $output = "Sent";
-          $($selectorOutput).text($output);
+          $($selectorOutput).text($output + " " + data);
           return $($selectorOutput).css("height", "20px");
         }
       }).fail(function() {
@@ -165,25 +167,6 @@
       });
       return false;
     }
-  };
-
-  rotateImages = function() {
-    var currentPhoto, nextPhoto, updateTense;
-    currentPhoto = $('#imageGallery div.current');
-    nextPhoto = currentPhoto.next();
-    if (nextPhoto.length === 0) {
-      nextPhoto = $('#imageGallery div:first');
-    }
-    currentPhoto.removeClass("current").addClass("previous");
-    currentPhoto.css("opacity", "0.5");
-    nextPhoto.css("opacity", "0.0");
-    nextPhoto.addClass("current");
-    nextPhoto.animate({
-      opacity: 1.0
-    }, 1000, updateTense(currentPhoto));
-    return updateTense = function(currentPhoto) {
-      return currentPhoto.removeClass("previous");
-    };
   };
 
   $(document).ready(function() {
@@ -199,3 +182,4 @@
   });
 
 }).call(this);
+//# sourceMappingURL=javascript.js.map
